@@ -1,4 +1,4 @@
-###Update 2015-12-23:
+### Update 2015-12-23:
 
 **As i currently have no time to work on this project anymore and telegram released its own [bot-api](https://core.telegram.org/bots), there won't be many new updates to this project in the future. I will try to go through all currently open issues so there is nothing left in the issue section anymore (even if i need to close some things with `wontfix`).  
 If someone wants to takeover this project i am willing to give him push-rights or link to his fork on github/packagist.**
@@ -24,7 +24,7 @@ Requirements
 Usage
 -----
 
-###Setup telegram-cli
+### Setup telegram-cli
 [telegram-cli](https://github.com/vysheng/tg/) needs to run on a unix-socket (`-S`) or a port (`-P`), so *telegram-cli-client* can connect to it. All answers need to be returned as JSON (`--json`).  
 You should also start it with `-W` so the contact-list gets loaded on startup.  
 For this example we will take the following command (execute it from the dir, where you installed telegram-cli, not the php-client), `-d` lets it run as daemon.:
@@ -45,7 +45,7 @@ If you never started telegram-cli before, you need to start it first in normal m
 
 To stop the daemon use `killall telegram-cli` or `kill -TERM [telegram-pid]`.
 
-###Install telegram-cli-client with composer
+### Install telegram-cli-client with composer
 In your project-root:
 
 ```shell
@@ -55,7 +55,7 @@ composer require --update-no-dev zyberspace/telegram-cli-client
 Composer will then automatically add the package to your project requirements and install it (also creates the `composer.json` if you don't have one already).  
 If you want to use the discovery-shell, remove the `--update-no-dev` from the command.
 
-###Use it
+### Use it
 
 ```php
 require('vendor/autoload.php');
@@ -65,7 +65,7 @@ $contactList = $telegram->getContactList();
 $telegram->msg($contactList[0]->print_name, 'Hey man, what\'s up? :D');
 ```
 
-###Use it with the discovery-shell
+### Use it with the discovery-shell
 A really easy way to learn the api is by using the embedded [discover-shell](https://github.com/zyberspace/php-discovery-shell). You need to install the dev-dependencies for this (`composer update --dev`).
 
 ```shell
